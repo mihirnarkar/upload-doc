@@ -1,0 +1,1913 @@
+Image Classification 
+
+
+Image Classification techniques are classified into two types :
+
+a) Supervised learning :- The algorithm trained on labeled datasets
+eg: Teaching a child by showing pictures of different animals and telling the names 
+
+Process :
+1) Define the Problem
+2) Collect and Prepare Data
+3) Collect and Prepare Data
+4) Choose a Model
+Split Data: Training and Testing
+6) Train the Model
+7) Evaluate the Model
+8) Fine-Tuning
+9) Make Predictions
+10) Monitor and Maintain
+
+
+b) Unsupervised learning :- The algorithm explores the data on its own identifying its own patterns and similarities
+
+eg : Giving a child a collection of pictures without labels and letting them group similar ones based on their own observation 
+
+Process :
+1) Define the Problem or Objective
+2) Collect and Prepare Data
+Data Preprocessing
+Choose an Unsupervised Learning Algorithm:  clustering algorithms (k-means, hierarchical clustering), dimensionality reduction techniques (PCA, t-SNE), and association rule learning.
+5) Train the Model
+Other process remains same
+
+
+
+For Image classification most commonly used algorithm is Convolutional Neural Networks (CNNs):
+
+
+
+
+
+Different models created by python for image classification
+1) VGG16 and VGG19:
+Use Cases:
+Ideal for recognizing general objects in images.
+Suitable for tasks like identifying everyday items, household objects, and common scenes.
+
+
+2) ResNet (Residual Networks)
+Use Cases:
+Excellent for recognizing detailed patterns in images.
+Effective for tasks where you need to identify complex structures or objects with intricate features.
+
+
+3) Inception (GoogLeNet)
+Use Cases:
+Well-suited for scenarios where objects may appear in different scales or orientations.
+Good for tasks like identifying objects in cluttered scenes or with varying perspectives.
+
+4) Xception
+Use Cases:
+Great for scenarios where you need a balance of accuracy and efficiency.
+Suitable for image classification on devices with limited computational resources.
+
+
+5) MobileNet
+Use Cases:
+Specifically designed for mobile and edge devices.
+Perfect for tasks like real-time image classification on your smartphone.
+
+6) DenseNet
+Use Cases:
+Useful for tasks requiring a comprehensive understanding of the relationships between different features.
+Effective for identifying objects in images with intricate interdependencies.
+
+7) EfficientNet
+Use Cases:
+Well-suited for situations where you want high accuracy without using too many resources.
+Appropriate for various image classification tasks, balancing accuracy and efficiency.
+
+
+
+8) ResNeXt
+Use Cases:
+Useful for tasks where you want to improve accuracy by capturing diverse patterns.
+Effective in scenarios where a combination of different viewpoints is crucial.
+
+9) SqueezeNet
+Use Cases:
+Designed for applications where you need a compact model with acceptable accuracy.
+Ideal for real-time image classification on devices with limited storage.
+
+
+10) NASNet (Neural Architecture Search Network)
+Use Cases:
+Well-suited for tasks where you want the model to automatically adapt its architecture.
+Useful for image classification in dynamic environments with evolving requirements.
+
+
+11) ShuffleNet
+Use Cases:
+Suitable for scenarios where computational resources are limited.
+Effective for image classification in applications where efficiency is a priority.
+
+
+12) Wide ResNet
+Use Cases:
+Ideal for tasks where you want to enhance model performance by increasing its width.
+Effective for image classification in situations requiring a broader understanding of features.
+
+
+
+Different types of algorithm used in image classification are as follows:
+
+1) Convolutional Nueral Network(CNN) : CNNs have become the go-to architecture for image classification tasks. They are designed to automatically and adaptively learn spatial hierarchies of features through convolutional layers. Popular CNN architectures include AlexNet, VGGNet, GoogLeNet (Inception), ResNet, and more. 
+
+
+
+2) Support Vector Machine(SVM) : SVM is a traditional machine learning algorithm that can be used for image classification. SVM finds the hyperplane that best separates different classes in feature space.
+
+3) K-Nearest Neighbours (K-NN) : K-NN is a simple algorithm that classifies an input by finding the majority class among its k nearest neighbors in the feature space. 
+
+4) Decision Trees and Random Forests : Decision trees split the input space into regions and assign a class label to each region. Random Forests, which consist of an ensemble of decision trees, are commonly used for image classification tasks.
+
+5) Naive Bayes : Naive Bayes is a probabilistic algorithm that is based on Bayes' theorem. Despite its simplicity, it can be effective for certain image classification tasks.
+
+6) Logistic Regression : Logistic regression models the probability that an instance belongs to a particular class. It can be used for binary classification tasks or extended to handle multiple classes.
+
+7) Extreme Learning Machines (ELM) : ELM is a type of neural network with a single hidden layer of randomly generated neurons. It is known for its fast training speed and simplicity. 
+
+8) Adaboost : Adaboost is an ensemble learning method that combines multiple weak classifiers to create a strong classifier. It can be used for image classification by combining the outputs of multiple classifiers.
+
+9) XGBoost : XGBoost is a gradient boosting algorithm that has gained popularity for its high performance and scalability. It can be applied to image classification tasks as well.
+
+10) Transfer Learning : While not a specific algorithm, transfer learning is a technique where a pre-trained model on a large dataset (such as ImageNet) is fine-tuned for a specific image classification task with a smaller dataset. This often leads to better performance.
+
+
+
+Time Complexity and Space Complexity 
+
+Time Complexity : The complexity is a measure of amount of time an algorithm takes to run with respect to its input size 
+
+Example: Linear Search
+Consider a simple linear search algorithm that looks for a specific element in a list. The time complexity of this algorithm is O(n), where 'n' is the size of the list.
+
+Code :
+def linear_search(lst, target):
+    for element in lst:
+        if element == target:
+            return True
+    return False
+
+In this example, the time complexity is O(n) because the time it takes to complete the search is directly proportional to the size of the input list 'lst'. If the list is twice as long, the algorithm will take roughly twice as long to complete.
+
+
+Space Complexity :  Space complexity is a measure of the amount of memory an algorithm uses with respect to its input size.
+
+Example: Sum of Elements
+
+Consider an algorithm that calculates the sum of elements in a list. The space complexity of this algorithm is O(1), constant space, because the amount of memory used doesn't depend on the size of the input.
+
+Code :
+def sum_of_elements(lst):
+    total = 0
+    for element in lst:
+        total += element
+    return total
+
+
+In this example, the space complexity is O(1) because the algorithm uses a constant amount of memory (the variable 'total') regardless of the size of the input list. Adding more elements to the list doesn't require more memory.
+
+
+
+
+
+Medical Documents :
+
+1) Medical Records/Patient Charts
+Insurance Claims and Billing Documents
+3) Prescription and Medication Records
+4) Consent Forms
+5) Medical Certificates
+6) Healthcare Policies and Procedures
+7) Medical Reports and Referral Letters
+8) HIPAA Compliance Documents
+9) Emergency Response Plans
+
+
+
+
+
+Code explanations :
+
+code 1: datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True, validation_split=0.2)
+
+1) rescale=1./255 :- This means that the pixel values of the images will be scaled down by a factor of 1/255. It's a common practice to normalize pixel values to be in the range [0, 1].
+
+2) shear_range=0.2 :- It introduces shearing transformations, which slant the image along a certain axis.
+
+3) zoom_range=0.2 :- This allows random zooming in on the images by a factor of up to 0.2.
+
+4) horizontal_flip=True :-  It randomly flips images horizontally, which can augment the dataset and make the model more robust.
+
+5) validation_split=0.2 :-  This splits the dataset into training and validation sets, reserving 20% of the data for validation. This is useful for assessing the model's performance on data it hasn't seen during training.
+
+In simpler terms, this line of code is preparing a tool (ImageDataGenerator) to process and augment a collection of images for training a machine learning model, making the model more adaptable and effective.
+
+
+Code 2: train_generator = datagen.flow_from_directory(data_dir, target_size=(256, 256), batch_size=32, class_mode='categorical', subset='training')
+
+1) datagen :- This is the ImageDataGenerator you defined earlier, specifying how the training data should be augmented.
+
+2) .flow_from_directory(data_dir, target_size=(256, 256), batch_size=32, class_mode='categorical', subset='training') :- This function generates batches of augmented data from a directory. Let's look at each parameter:
+
+
+
+
+
+a) data_dir :- This is the path to the directory containing the training images
+
+b) target_size=(256, 256) :-  It resizes the images to have a height and width of 256 pixels.
+
+c) batch_size=32 :- It specifies that each batch of training data should contain 32 images.
+
+d) class_mode='categorical' :- This indicates that the labels for the images are categorical, meaning they represent different classes. This is common in classification tasks where each image belongs to a specific category.
+
+e) subset='training' :- It tells the generator to use the subset of the data designated for training. This is related to the validation split you specified in the ImageDataGenerator, where 20% of the data was reserved for validation, and the remaining 80% is used for training
+
+In summary, this line of code is creating a generator specifically for the training data. It takes images from a specified directory, applies the data augmentation transformations defined in datagen, and organizes the data into batches for training a machine learning model.
+
+
+
+Code 3 : val_generator = datagen.flow_from_directory(data_dir_test, target_size=(256, 256), batch_size=32, class_mode='categorical', subset='validation')
+
+1) datagen :- This is the same ImageDataGenerator defined earlier, specifying how the validation data should be processed.
+
+2) .flow_from_directory(data_dir_test, target_size=(256, 256), batch_size=32, class_mode='categorical', subset='validation') :- This function is similar to the one used for training data. Let's look at each parameter
+
+a) data_dir_test : - This is the path to the directory containing the validation images. It's a separate directory from the one used for training data.
+
+b) target_size=(256, 256) :-  It resizes the validation images to have a height and width of 256 pixels. This should match the target size used for training data.
+
+c) batch_size=32 :- It specifies that each batch of validation data should contain 32 images. This should be consistent with the batch size used for training data.
+
+d) class_mode='categorical’ :- This indicates that, like in training, the labels for the validation images are categorical, representing different classes.
+
+e)  subset='validation' : It tells the generator to use the subset of the data designated for validation. This is related to the validation split specified in the ImageDataGenerator during training.
+
+
+In summary, this line of code is creating a generator specifically for the validation data. It takes images from a different directory, applies the same data augmentation transformations defined in datagen, and organizes the data into batches for evaluating the model's performance on unseen data.
+
+
+
+Batch Size : The batch size is a hyperparameter that determines the number of samples processed in each iteration during training. It can affect both the training speed and memory usage. Choosing an appropriate batch size depends on various factors, including the available computational resources, the size of your dataset, and the architecture of your neural network. There's no one-size-fits-all answer, and it often involves some experimentation.
+
+Here are some considerations:
+1) Larger Batch Size:
+Pros: Generally speeds up training as more samples are processed in parallel.
+Cons: Requires more memory; might not fit on GPUs with limited memory.
+
+2) Smaller Batch Size:
+Pros: Requires less memory; may converge faster and generalize better in some cases.
+Cons: Slower training due to fewer samples processed in parallel.
+
+
+
+Code 4 : 
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(256, 256, 3)))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Flatten())
+model.add(Dense(128, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(len(class_names1), activation='softmax'))
+
+1) model = Sequential() :  This initializes a sequential model, which is a linear stack of layers. In a sequential model, you can add one layer at a time in a step-by-step fashion.
+
+2) model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(256, 256, 3))) : 
+Adds a convolutional layer with 32 filters of size (3, 3).
+Uses the ReLU (Rectified Linear Unit) activation function, which introduces non-linearity.
+input_shape=(256, 256, 3) specifies that the input should have a shape of (256, 256, 3), where 3 is for the RGB color channels.
+
+
+3) model.add(MaxPooling2D(pool_size=(2, 2))) :-  Adds a max-pooling layer with a pool size of (2, 2). Max-pooling reduces the spatial dimensions of the data.
+
+4) model.add(Conv2D(64, (3, 3), activation='relu')) :- Adds another convolutional layer with 64 filters of size (3, 3). Again, uses the ReLU activation function
+
+5) model.add(MaxPooling2D(pool_size=(2, 2))) :- Adds another max-pooling layer with a pool size of (2, 2).
+
+6) model.add(Flatten()) : Adds a flatten layer, which converts the multi-dimensional output to a one-dimensional array. This is necessary before feeding the data into dense layers
+
+7) model.add(Dense(128, activation='relu')) : Adds a fully connected (dense) layer with 128 neurons. Uses the ReLU activation function.
+
+8) model.add(Dropout(0.5)) :- Adds a dropout layer with a dropout rate of 0.5. Dropout is a regularization technique that helps prevent overfitting by randomly setting a fraction of input units to zero during training
+
+9) model.add(Dense(len(class_names1), activation='softmax')) :- Adds the final fully connected (dense) layer with a number of neurons equal to the number of classes in your dataset (len(class_names1)). Uses the softmax activation function, which is common for multi-class classification problems. It converts the model's raw output into class probabilities.
+
+In summary, this code defines a CNN architecture with convolutional and pooling layers, followed by fully connected layers for image classification. The ReLU activation function introduces non-linearity, and dropout helps prevent overfitting. The final layer uses softmax activation for multi-class classification.
+
+
+Sequential : A Sequential model in Keras is a linear stack of layers where you can add one layer at a time. It represents a simple and straightforward neural network architecture, where each layer flows sequentially from the previous one. This type of model is appropriate for most common use cases, such as feedforward neural networks and simple convolutional neural networks (CNNs).
+
+
+In summary, your model processes input images through convolutional and pooling layers to extract features, flattens the output, passes it through fully connected layers, and produces class probabilities at the output layer using the softmax activation function. The class with the highest probability is considered the predicted class during inference.
+
+
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+a) model.compile is a method in Keras that configures the model for training.
+b) It takes several important parameters:
+optimizer='adam': This specifies the optimization algorithm to use during training. 'adam' is a popular optimization algorithm that adapts the learning rate during training.
+
+b) loss='categorical_crossentropy': This is the loss function that the model will minimize during training. For multi-class classification problems with one-hot encoded labels, 'categorical_crossentropy' is commonly used.
+
+c) metrics=['accuracy']: This defines the evaluation metric(s) used to monitor the training and validation performance. In this case, it's tracking the accuracy of the model.
+
+
+
+
+				PLSQL Assignment
+
+Q1. Create Table Students with following fields & Write 2 insert statements for it.
+RollNo integer 10 => Auto Increment
+FName string 50
+LName string 50
+DOB Date => Date of Birth
+Add1 string 150
+Add2 String 150
+City String 100
+State String 100
+Pin String 10
+Class String 10 => class in which student is studying
+First field will be used as a unique identifier for the record.
+Solution : 
+CREATE TABLE Students (
+    RollNo NUMBER(10) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    FName VARCHAR2(50),
+    LName VARCHAR2(50),
+    DOB DATE,
+    Add1 VARCHAR2(150),
+    Add2 VARCHAR2(150),
+    City VARCHAR2(100),
+    State VARCHAR2(100),
+    Pin VARCHAR2(10),
+    Class VARCHAR2(10)
+);
+
+INSERT INTO Students (FName, LName, DOB, Add1, Add2, City, State, Pin, Class)
+VALUES ('Mihir', 'Narkar', TO_DATE('2001-08-19', 'YYYY-MM-DD'), '123 Main Street', 'Apt 4B', 'New York', 'NY', '10001', '10A');
+
+INSERT INTO Students (FName, LName, DOB, Add1, Add2, City, State, Pin, Class)
+VALUES ('Srushti', 'Pagare', TO_DATE('2001-02-02', 'YYYY-MM-DD'), '789 Oak Lane', 'Apt 2C', 'Chicago', 'IL', '60601', '9B');
+
+select * from students;
+
+Output : 
+
+
+
+
+Q2. Create table Subjects with following fields & Write 2 insert statements for it.
+SubID integer 10 => Auto Increment
+SubName String 100
+First field will be used as a unique identifier for the record.
+Solution : 
+CREATE TABLE Subjects (
+    SubID NUMBER(10) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    SubName VARCHAR2(100)
+);
+
+INSERT INTO Subjects (SubName)
+VALUES ('Mathematics');
+
+INSERT INTO Subjects (SubName)
+VALUES ('Science');
+
+SELECT * FROM Subjects;
+
+Output : 
+
+
+
+
+Q.3)   Create a PL/SQL Procedure SP_Exam_result which should accept exam date as parameter and should create the records for each Student and each Subject in Exams table automatically assuming that all the exams were conducted on the same date. The MarksFrom field should be having value as 100. The MarksObtained field should have random values generated using following function.
+ROUND(DBMS_RANDOM.VALUE(30,100))
+
+
+
+
+Solution : 
+
+
+CREATE OR REPLACE PROCEDURE SP_Exam_result (p_exam_date DATE) AS
+BEGIN
+    FOR student_record IN (SELECT RollNo FROM Students) LOOP
+        FOR subject_record IN (SELECT SubID FROM Subjects) LOOP
+            INSERT INTO Exams (ExamDate, RollNo, SubID, MarksObtained, MarksFrom)
+            VALUES (p_exam_date, student_record.RollNo, subject_record.SubID, ROUND(DBMS_RANDOM.VALUE(30, 100)), 100);
+        END LOOP;
+    END LOOP;
+END SP_Exam_result;
+
+
+BEGIN
+    SP_Exam_result(TO_DATE('2023-09-10', 'YYYY-MM-DD')); -- Replace with your desired exam date
+END;
+
+select * from exams;
+
+
+Output : 
+
+
+
+Q4. Create a PL/SQL Procedure SP_Exam_result which should accept exam date as parameter and should create the records for each Student and each Subject in Exams table automatically assuming that all the exams were conducted on the same date. The MarksFrom field should be having value as 100. The MarksObtained field should have random values generated using following function.
+ROUND(DBMS_RANDOM.VALUE(30,100))
+Solution :
+
+
+CREATE OR REPLACE PROCEDURE SP_Exam_result(p_exam_date DATE) AS
+BEGIN
+    FOR student_rec IN (SELECT RollNo FROM Students) LOOP
+        FOR subject_rec IN (SELECT SubID FROM Subjects) LOOP
+            -- Check if a record already exists with the same combination of values
+            BEGIN
+                INSERT INTO Exams (ExamDate, RollNo, SubID, MarksObtained, MarksFrom)
+                VALUES (p_exam_date, student_rec.RollNo, subject_rec.SubID, ROUND(DBMS_RANDOM.VALUE(30, 100)), 100);
+            EXCEPTION
+                WHEN DUP_VAL_ON_INDEX THEN
+                    -- Handle the exception (record already exists)
+                    NULL;
+            END;
+        END LOOP;
+    END LOOP;
+    COMMIT;
+END SP_Exam_result;
+
+
+BEGIN
+    SP_Exam_result(TO_DATE('2023-09-10', 'YYYY-MM-DD')); -- Replace with your desired exam date
+END;
+
+
+// Retrieve all exam results for a specific exam date:
+
+SELECT * FROM Exams
+WHERE ExamDate = TO_DATE('2023-09-10', 'YYYY-MM-DD');
+Output : 
+
+
+//  Retrieve exam results for a specific student for a given exam date:
+
+SELECT * FROM Exams
+WHERE ExamDate = TO_DATE('2023-09-10', 'YYYY-MM-DD') 
+AND RollNo = 2; 
+
+
+Output : 
+
+
+
+
+
+
+Q5. Using SP_Exam_result create exam results for exams date 31-Aug-2018, 30-Nov-2018, 28-Feb-2019 and 15-May-2019. Write calls to SP_Exam_result procedure.
+
+
+Solution : 
+
+BEGIN
+    SP_Exam_result(TO_DATE('2018-08-31', 'YYYY-MM-DD'));
+END;
+
+
+BEGIN
+    SP_Exam_result(TO_DATE('2018-11-30', 'YYYY-MM-DD'));
+END;
+
+
+BEGIN
+    SP_Exam_result(TO_DATE('2019-02-28', 'YYYY-MM-DD'));
+END;
+
+
+BEGIN
+    SP_Exam_result(TO_DATE('2019-05-15', 'YYYY-MM-DD'));
+END;
+Select * from exams ;
+
+
+
+Output : 
+
+
+
+
+
+
+
+
+
+
+
+
+Q6. Write SQL query to generate output as given below for the students by adding up all the marks for the Student for each Subject
+
+Solution : 
+
+SELECT
+    s.RollNo AS "Roll No.",
+    s.FName || ' ' || s.LName AS "Student Full Name",
+    'Mathematics' AS "Subject Name",
+    MAX(CASE WHEN sub.SubName = 'Mathematics' THEN e.MarksObtained ELSE NULL END) AS "Marks1",
+    MAX(CASE WHEN sub.SubName = 'Mathematics' THEN e.MarksObtained ELSE NULL END) AS "Marks2",
+    MAX(CASE WHEN sub.SubName = 'Mathematics' THEN e.MarksObtained ELSE NULL END) AS "Marks3",
+    MAX(CASE WHEN sub.SubName = 'Mathematics' THEN e.MarksObtained ELSE NULL END) AS "Marks4",
+    SUM(CASE WHEN sub.SubName = 'Mathematics' THEN e.MarksObtained ELSE NULL END) AS "Total",
+    ROUND((SUM(CASE WHEN sub.SubName = 'Mathematics' THEN e.MarksObtained ELSE NULL END) / 400) * 100, 2) AS "%"
+FROM
+    Students s
+JOIN
+    Exams e ON s.RollNo = e.RollNo
+JOIN
+    Subjects sub ON e.SubID = sub.SubID
+WHERE
+    sub.SubName = 'Mathematics'
+GROUP BY
+    s.RollNo, s.FName, s.LName
+UNION ALL
+SELECT
+    s.RollNo AS "Roll No.",
+    s.FName || ' ' || s.LName AS "Student Full Name",
+    'Science' AS "Subject Name",
+    MAX(CASE WHEN sub.SubName = 'Science' THEN e.MarksObtained ELSE NULL END) AS "Marks1",
+    MAX(CASE WHEN sub.SubName = 'Science' THEN e.MarksObtained ELSE NULL END) AS "Marks2",
+    MAX(CASE WHEN sub.SubName = 'Science' THEN e.MarksObtained ELSE NULL END) AS "Marks3",
+    MAX(CASE WHEN sub.SubName = 'Science' THEN e.MarksObtained ELSE NULL END) AS "Marks4",
+    SUM(CASE WHEN sub.SubName = 'Science' THEN e.MarksObtained ELSE NULL END) AS "Total",
+    ROUND((SUM(CASE WHEN sub.SubName = 'Science' THEN e.MarksObtained ELSE NULL END) / 400) * 100, 2) AS "%"
+FROM
+    Students s
+JOIN
+    Exams e ON s.RollNo = e.RollNo
+JOIN
+    Subjects sub ON e.SubID = sub.SubID
+WHERE
+    sub.SubName = 'Science'
+GROUP BY
+    s.RollNo, s.FName, s.LName
+ORDER BY
+    "Roll No.", "Subject Name";
+
+
+
+
+
+Output : 
+
+
+
+
+
+
+Q7. Store the above out put in a table called Results.
+
+Solution : 
+
+
+CREATE TABLE Results AS
+SELECT
+    s.RollNo AS "Roll No.",
+    s.FName || ' ' || s.LName AS "Student Full Name",
+    sub.SubName AS "Subject Name",
+    MAX(CASE WHEN sub.SubName = 'Mathematics' THEN e.MarksObtained ELSE NULL END) AS "Marks1",
+    MAX(CASE WHEN sub.SubName = 'Science' THEN e.MarksObtained ELSE NULL END) AS "Marks2",
+    MAX(CASE WHEN sub.SubName = 'Mathematics' THEN e.MarksObtained ELSE NULL END) AS "Marks3",
+    MAX(CASE WHEN sub.SubName = 'Science' THEN e.MarksObtained ELSE NULL END) AS "Marks4",
+    SUM(CASE WHEN sub.SubName = 'Mathematics' THEN e.MarksObtained ELSE NULL END) +
+    SUM(CASE WHEN sub.SubName = 'Science' THEN e.MarksObtained ELSE NULL END) AS "Total",
+    ROUND((SUM(CASE WHEN sub.SubName IN ('Mathematics', 'Science') THEN e.MarksObtained ELSE NULL END) / 400) * 100, 2) AS "%"
+FROM
+    Students s
+JOIN
+    Exams e ON s.RollNo = e.RollNo
+JOIN
+    Subjects sub ON e.SubID = sub.SubID
+WHERE
+    sub.SubName IN ('Mathematics', 'Science')
+GROUP BY
+    s.RollNo, s.FName, s.LName, sub.SubName;
+
+
+Select * from results;
+
+
+
+
+
+
+
+
+Q8. Write a query to find out the total highest mark scorer for each subject.
+
+
+Solution : 
+
+WITH SubjectScores AS (
+    SELECT
+        sub.SubName AS "Subject Name",
+        s.RollNo AS "Roll No.",
+        s.FName || ' ' || s.LName AS "Student Full Name",
+        e.MarksObtained AS "Marks"
+    FROM
+        Students s
+    JOIN
+        Exams e ON s.RollNo = e.RollNo
+    JOIN
+        Subjects sub ON e.SubID = sub.SubID
+)
+SELECT
+    "Subject Name",
+    "Roll No.",
+    "Student Full Name",
+    "Marks"
+FROM
+    (
+        SELECT
+            "Subject Name",
+            "Roll No.",
+            "Student Full Name",
+            "Marks",
+            RANK() OVER (PARTITION BY "Subject Name" ORDER BY "Marks" DESC) AS Rank
+        FROM
+            SubjectScores
+    )
+WHERE
+    Rank = 1;
+
+
+
+Output: 
+
+
+
+
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/339443520
+Water in Trees An essay on astonishing processes, structures and periodicities
+Article · February 2020
+DOI: 10.13128/Substantia-507
+CITATION
+1
+READS
+1,761
+1 author:
+Ernst Rudolf Zürcher
+Bern University of Applied Sciences
+25 PUBLICATIONS   290 CITATIONS   
+SEE PROFILE
+All content following this page was uploaded by Ernst Rudolf Zürcher on 23 February 2020.
+The user has requested enhancement of the downloaded file.
+
+Firenze University Press
+www.fupress.com/substantia
+Substantia
+An International Journal of the
+History of Chemistry
+OPEN ACCESS
+Water in Trees
+An essay on astonishing processes, structures 
+and periodicities
+Ernst Zürcher
+Dr. sc. nat., Forestry engineer ETHZ, Professor em. for Wood Science Bachelor & Master 
+Wood, Bern University of Applied Sciences, Architecture, Wood and Civil Engineering 
+Solothurnstrasse 102, P.O. Box, CH-2500 Biel-Bienne 6  |    Email : ernst.zuercher@bfh.ch
+Abstract. This essay shows that the relations between water and trees 
+have far-reaching, unexpected aspects and consequences.  The local 
+and the global terrestrial water cycles are directly or indirectly linked 
+to the presence of trees and forests. A more precise consideration of 
+photosynthesis reveals that this process is not only producing biomass 
+and oxygen, but is also the place of water synthesis. This newly formed 
+water probably shows properties according to the new water-paradigma 
+proposed by G. Pollack (2013). This must also be the case for the 
+water absorbed in the soil and flowing upwards through capillar wood 
+structures, forming vortices at the microscopic cellular and at the 
+macroscopic tree level. Another lesser-known phenomenon is linked 
+to periodical changes in the wood-water relation, according not only 
+to the solar influence (photoperiodism, seasonality), but also to more 
+subtle lunar rythmicities having an effect on wood properties. This last 
+aspect represents a kind of rehabilitation of traditional practices often 
+considered as mere superstitions.  
+Keywords.  Water cycle, photosynthesis, water synthesis, wood structure, 
+vortices, lunar rythmicities.
+WATER AT THE CENTER OF THE FUNDAMENTAL 
+PROCESS OF LIFE 
+ 
+Photosynthesis is the common process to all plants, but trees, due 
+to their outreaching dimensions and to the formation of forests in specific 
+multispecies associations, perform 2/3 of the global photosynthesis on 
+earth. A closer study of this process reveals that there is a hidden face of 
+photosynthesis. In many textbooks or even dictionaries, an uncomplete 
+equation of photosynthesis is still usual, which is misleading for a correct 
+understanding of the most important physiological process making life 
+Citation: E. Zürcher (2019) Water 
+in Trees - An essay on astonishing 
+processes, structures and periodi-
+cities. Substantia 3(2) Suppl.3: ??-
+??. DOI: 10.13128/Substantia-507
+Copyright: © 2019 E. Zürcher. This 
+is an open access, peer-reviewed 
+article published by Firenze Uni-
+versity Press (http://www.fupress.
+com/substantia) and distributed 
+under the terms of the Creative 
+Commons Attribution License, whi-
+ch permits unrestricted use, distri-
+bution, and reproduction in any me-
+dium, provided the original author 
+and source are credited.
+Data Availability Statement: All 
+relevant data are within the paper 
+and its Supporting Information files.
+Competing Interests: The Au-
+thor(s) declare(s) no conflict of in-
+terest.
+Substantia. An International Journal of the History of Chemistry 3(2) Suppl. 3: ???-???, 2019
+ISSN: 2532-3997 | DOI: 10.13128/Substantia-507
+
+76
+the reaction can be shown by using colours and bold 
+type:
+possible on earth. Effectively, following equation is 
+often figuring: 
+“6 molecules of carbon dioxide + 6 molecules of water 
++ light → 1 molecule glucose + 6 molecules oxygen”
+6CO2 + 6H2O       ------>      C6H12O6 + 6O2
+Sunlight energy 
+  Where: CO2 = carbon dioxide 
+H2O = water
+Light energy is required
+C6H12O6 = glucose
+O2 = oxygen
+ 
+The 
+researcher 
+who 
+finally 
+refutes 
+this incomplete and tenacious portrayal is the 
+microbiologist Cornelis Van Niel (1897 – 1985) 
+of Stanford University, following work as a young 
+student on the photosynthetic activities of various 
+types of bacteria. One particular group of these – the 
+purple sulphurous bacteria (Thiorhodobactéries) – is 
+capable of reducing the CO2 into carbohydrates, in an 
+atmosphere devoid of oxygen (anaerobic conditions) 
+and without emission of oxygen. The substrate 
+necessary here is not water H2O, but hydrogen 
+sulphide H2S. What is released by the process, on the 
+other hand, in addition to the carbohydrates, is water 
+H2O and elemental sulphur S2 accumulated in the 
+globules within the bacteria and identifiable under 
+a microscope. Van Niel did not stop here and he 
+extrapolated his discovery by proposing a generalised 
+equation for photosynthesis. This came down to 
+affirming that the source of the oxygen produced by 
+chlorophyllian photosynthesis was in fact the water 
+and not the carbon dioxide.
+ 
+This brilliant speculation put forward in 
+the 1930's received its proof in the following decade 
+when researchers from Berkeley used a heavy 
+isotope of oxygen (18O) to mark the water molecule 
+entering the reaction. Result: the oxygen released 
+comes exclusively from the H2O molecule. In terms 
+of process, this comes down to understanding that 
+the primary action of the sun's rays in photosynthesis 
+consists of the splitting or photolysis of water. The 
+newly produced water takes its oxygen from the 
+carbon dioxide absorbed (Ray 1972;  Lance 2013).
+ 
+The complete and balanced equation for the 
+production of glucose by photosynthesis, within a 
+living system without which nothing can happen, 
+thus includes an extra constituent. The destination 
+of the atoms of the water molecules taking part in 
+6CO2 + 12 H2O  + light energy & living system → 
+C6H12O6 + 6O2 + 6H2O
+Glucose
+By converting into moles (molecule-grammes, 
+according to chemists' terminology), it is possible to 
+illustrate the flows of matter by weight (in grammes), 
+with indication of the energy required (in kilo-
+Joules):
+6 Mol CO2 + 12 Mol H2O + light & life →
+1 Mol C6H12O6 + 6 Mol O2 + 6 Mol H20
+264 g
+180 g
+216 g
+192 g
+2897 kJ
+108 g
+Figure 1 also presents the values corresponding to 
+the synthesis of wood, originally based on glucose, 
+but characterised by a slightly different formula used 
+by physiologists (Zimmer and Wegener, 1996). Some 
+remarkable facts emerge from this new vision of the 
+process:
+•  For each dry tonne of wood made by the 
+tree, a mass of 1.851 tonnes of gaseous CO2 
+is removed from the atmosphere, reducing 
+by that amount the greenhouse effect and 
+global warming which preoccupy humanity 
+at present. We have here a 'carbon sink', 
+persisting as long as the wood is not burned 
+or decomposed releasing an analogous 
+quantity of CO2 into the atmosphere. It 
+will therefore be important in the future 
+to incorporate wood on a long-term basis 
+either into buildings as a material or into 
+soils in order to increase the content of stable 
+organic matter.
+•  Each anhydrous tonne of wood made by 
+the tree is accompanied by a mass of 1.392 
+tonnes of newly-formed oxygen, coming 
+from the photolysis of water. This represents 
+a considerable volume: 973 m3 of pure 
+oxygen, or 4,636 m3 mixed at a proportion 
+of 21% into the air we breathe to stay alive. 
+A rather unorthodox question, coming from 
+a quality point of view: Does newly-formed 
+oxygen of this kind, entering the biosphere 
+for the first time in this form, have different 
+properties from “old” oxygen? Could this 
+possibly be one of the reasons why forest 
+air has always been felt to be particularly 
+beneficial to health?
+•  Each anhydrous tonne of wood made by 
+E. Zürcher
+
+77
+the tree is accompanied by a mass of 541 kilos 
+of newly-formed water. As for the preceding 
+component, we have here perfectly pure 
+water, which has never before entered into 
+the great cycle “evapotranspiration – cloud 
+formation – condensation / precipitation – 
+running-off / percolating – accumulation – 
+resurgence”. It is likely that this new water 
+soaks the green parts of the plants and 
+circulates with the elaborated (phloem) sap 
+down to their lower organs, contributing to 
+their growth. Here too arises the question 
+of qualities, properties or specific virtues 
+of such water, especially given the many 
+forms of pollution to which the external 
+water cycle is subjected. Such a question 
+can be placed in a modern scientific debate, 
+very controversial at the outset, but finding 
+more and more renowned defenders: that 
+of the 'memory of water', as developed by 
+pioneers such as Jacques Benveniste, Xy 
+Vinh Luu, Marc Henry, Luc Montagnier or 
+Gerald Pollack. We should mention here, to 
+underline the credibility of the protagonists 
+and the importance of the subject, that 
+Professor Luc Montagnier received the 
+Nobel Prize for Medicine in 2008.
+TREES AND THE LATEST FINDINGS 
+ABOUT WATER
+ 
+The emergence of a new understanding of 
+water allows us to adjust our view of the structures 
+and functioning of trees. A chance observation 
+made in a Japanese laboratory followed by a series 
+of experiments starting at the beginning of this 
+century has led to a progressive confirmation of a 
+hitherto-unknown property of water. In the presence 
+of hydrophilic membranes (natural or synthetic) and 
+over a distance reaching sometimes several tenths 
+of a millimetre, water acquires a state which seems 
+both liquid and solid at once, a fact which suggested 
+to the discoverer, a researcher and professor of 
+bioengineering already well-known for his book 
+'Cells, Gels and the Engines of Life (Pollack 2001), 
+the expressions of 'exclusion zones, EZ' (EZ water / 
+linked to its particularly pure state) and 'fourth phase 
+of water'. in addition to the solid, liquid and vapour 
+phases. The research on the subject which continues 
+to this day has recently received a coherent overall 
+structure in the form of a publication which did 
+not go unnoticed by the scientific community: 'The 
+Fourth Phase of Water – Beyond solid, liquid and 
+vapor' (Pollack 2013).
+ 
+The anatomical structures of plants and 
+trees in particular, composed of a complex system of 
+membranes and cells with hydrophilic walls showing 
+dielectric properties (as postulated by Pollack) and 
+the mechanisms of transport of water towards the 
+crown and the metabolism linked to photosynthesis 
+can, through this new concept, be interpreted more 
+precisely. It should be mentioned that this water close 
+to hydrophilic membranes can be distinguished from 
+'normal' water by many criteria such as level of purity, 
+pH, viscosity, refraction index, the absorption of light 
+energy, electrical charge, oxygen content or again the 
+formation of a supramolecular network.
+ 
+The formation of 'new' water resulting from 
+photosynthesis, in addition to the carbohydrates 
+and oxygen, thus gains additional significance, 
+since it occurs within complex membrane systems, 
+corresponding to the criteria of formation of water of 
+the 'EZ' type. The fact that this new water takes 89% 
+of its mass from part of the oxygen of the atmospheric 
+CO2 is already remarkable in itself, making the 
+plant – and in a particular way the tree – both a 
+consumer and a producer of water. It is recognised 
+that carbohydrates and oxygen are necessary for life. 
+We may now ask whether new water with its special 
+properties (which still need analysing) might not also 
+be of fundamental importance.
+Figure 1. Complete general equation of photosynthesis, with an 
+indication of the destination of components (above) and average 
+proportions accepted for wood, with indication of weight ratios 
+compared to the dry matter of wood, according to Zimmer and 
+Wegener (1996) (below) [drawing D. Rambert]. 
+Water in Trees - An essay on astonishing processes, structures and periodicities
+
+78
+upward direction is fulfilled in conifers by tracheids 
+of earlywood (formed in the spring and the beginning 
+of summer) containing many bordered pits. The 
+latter represent the points where water passes from 
+one cell to its neighbour during its flow towards the 
+crown, site of photosynthesis. Comparatively, the 
+tracheids of late wood (formed towards the end of the 
+vegetative period) possess a much thicker cell wall 
+endowed with fewer pits; their function is no longer 
+conducting raw sap, but primarily the support of the 
+whole structure. The functioning of a bordered pit, a 
+local cell wall modification essential to the security 
+of the conduction system, is presented in Figure 2: 
+we have here an efficient and 'ingenious' system, a 
+characteristic component of the functional anatomy 
+of conifers.
+ 
+Compared to conifers, the anatomy of broad-
+leaved trees is much more complex, with its forms 
+STRUCTURES
+A functional approach / Xylem as water conducting 
+system
+ 
+The function of conducting water requires 
+bringing water from the root system to the crown, 
+where the assimilation takes place. This occurs 
+through a conducting system made of cells called 
+tracheids in conifers and connecting alignments 
+of cells called vessels in broadleaved species. The 
+first engineering problem is: How to bring cold 
+water (heavy) up to the high parts exposed to heat, 
+sometimes more than 100 metres for the largest trees? 
+How can the physical law of gravity be overcome?
+ 
+The solution is proposed by the physiologists 
+with the 'theory of cohesion – tension': Water is sucked 
+up, with its diluted mineral salts, along the cellular 
+channels by the 'negative pressure' resulting from the 
+foliar transpiration of the tree (Zimmermann 1989; 
+Koch et al. 2004; Johnson 2013). To go beyond the 
+critical height of 10 metres (linked to the atmospheric 
+pressure), the water must contain absolutely no gas 
+bubbles and thus have access to the totality of its 
+internal cohesive forces (which allow, for example, 
+two glass plates to stick together). This state of liquid 
+purity is made possible in conifers by bordered pits. 
+These are mobile contact structures between a tracheid 
+and its neighbour with an effect simultaneously of 
+valve and sieve in order to avoid any embolism due to 
+air bubbles which could accumulate. This system of 
+water transport with special specifications functions 
+at the periphery of the bole's section, in the xylem, the 
+living part of the wood characterised by bio-electric 
+fields. Gerald Pollack's recent discovery (mentioned 
+above) reveals that water running through tracheids 
+or vessels the most directly in contact with the 
+hydrophilic cell wall acquires a particular structure 
+('liquid crystals') and unexpected physical, chemical 
+and electrical properties, probably essential to the 
+physiological exploits of trees. Running through 
+capillary systems allows the water to stay liquid 
+down to low temperatures, around – 15°C for 
+certain species, instead of damaging the structures 
+by the formation of ice crystals in winter. As for the 
+electrophysiologists, they observe that the differences 
+in electrical potential generated by the living tissues 
+stimulate the flow of raw sap. These observations 
+follow on logically from old experiments testing the 
+effect of such potentials on the movement of water in 
+glass capillaries (Maag 1928).
+ 
+This function of conducting water in an 
+Figure 2. Diagramme of the workings of a bordered pit: 
+when functioning normally (top), the water skirts the central 
+impermeable zone of the shared membrane and enters the 
+neighbouring tracheid; in the case of a wound with air bubbles 
+(accidental entry of air), the relative increase in pressure causes 
+the membrane to be flattened, by suction, against the inside of the 
+opposite pit (bottom), blocking the flow of water in the damaged 
+part [modifies after Zimmermann 1983]. The recent discoveries 
+about water encourage the supposition that this forced passage 
+through the fibrillar weave of the peripheral membrane confer 
+on the water an additional proportion in the 'cristalline-liquid' 
+phase with high viscosity and lowered freezing point, an essential 
+characteristic for species growing in cold regions.
+E. Zürcher
+
+79
+of functional specialisation. Depending on the tree 
+species, we find generally two types of arrangement 
+of vessels: in porous zones in the case of a marked 
+contrast between early and late wood, or in diffuse 
+pores, when the vessels are of practically constant 
+diameter, spread regularly over the whole of the 
+annual ring.
+Spirality and the Golden Ratio
+ 
+The helical arrangement observed in the 
+needles of a young Scots Pine shoot follows a general 
+principle of pronounced geometrical nature, which 
+Goethe (1749 – 1832) considered as fundamental 
+and called “spiral tendency, which reigns in Nature”, 
+and which is always found in combination with the 
+“vertical tendency”. It was shown by a philosopher 
+and naturalist from Geneva, Charles Bonnet (1720 
+– 1793), that the position of leaves or needles along 
+a stem (subject of phyllotaxy, Fig.2) or the structure 
+of a fir-cone or pine-cone, or indeed that of a thistle 
+flower head, follow a series of crossed spirals. These 
+are subject to a particular relationship: the Golden 
+Ratio. This ratio, originally defined by Euclid (325 
+– 265 BC), is found among others in the famous 
+number sequence developed by Leonard of Pisa, also 
+called Fibonacci (approx. 1170 – 1250) :
+1 – 1 – 2 – 3 – 5 – 8 – 13 – 21 – 34 – 55 – 89 – 144 - … ,
+where each element is the sum of the two preceding 
+ones. This series allows the constitution of a set of 
+rational ratios 2/1, 3/2, 5/3, 8/5, 13/8, ... 144/89, ... , 
+which tend towards the number Phi ( ф ) = 1.61803 
+… . Similarly, the series 1/2, 2/3, 3/5, 5/8, … etc. 
+converges towards the number phi (ϕ) = 0.61803… 
+(ϕ = ф - 1). A cone of the Scots Pine (Pinus sylvestris) 
+observed from its base shows an arrangement of 
+scales (also called bracts) according to two spiral 
+systems: a group of 13 rightward (clockwise) spirals 
+and a group of 8 leftward (anti-clockwise) spirals. An 
+Eastern White (Weymouth) Pine (Pinus strobus) is 
+also formed according to the Golden Ratio, but with 
+a ratio of 8/5. These arrangements are illustrated by 
+the example of a Maritime Pine in Fig.3. Analysis 
+of a specimen of Spear thistle (Cirsium vulgare), 
+an annual plant, shows the seeds on a dried head 
+to be arranged according to a double spiral system 
+with a ratio of 26/16, which can also be written 
+13*2 / 8*2, thus is part of the Fibonacci series. 
+Interestingly  -  and to make a link with the 2019 
+International Year of the Periodic Table of Chemical 
+Elements – the elements of the Mendeleyev’s table 
+can be geometrically arranged according to a spiral 
+Figure 3. Cone of a Maritime pine (Pinus pinaster) growing in 
+the western Mediterranean (above), showing an arrangement of 
+the scales according to two series of spirals with a ratio 13 / 8 
+(below).
+following the Fibonacci pattern (Morton 1977).  
+ 
+Where Life surges up
+ 
+Usually (as was the case in Figure 3), the 
+right-handed and left-handed spiral patterns (also 
+called parastiches) are counted from the base either 
+clockwise or anti-clockwise, which corresponds to an 
+upwards direction for the axis of the cone or for the 
+stem carrying leaves or buds.
+ 
+But we could also consider, like the famous 
+Austrian forester-hydrologist Viktor Schauberger 
+(1885-1958), that in the genesis of plant organs, series 
+of upward spirals cross downward spirals. In his 
+vision of the living world, he talks of female upward 
+energies which are fertilised by male downward 
+energies moving in the opposite direction. In 
+practice, the axillary buds arranged along the shoot 
+and the seeds developing at the receptacle or along 
+the axis of the cone (at the base of the scales) could 
+be understood as germs of life appearing within a 
+“flow – counterflow” system according to the precise 
+mathematical-geometrical ratios of the Golden 
+Ratio. In a conception of the plant as interacting with 
+the astronomical rhythms modulating among others 
+Water in Trees - An essay on astonishing processes, structures and periodicities
+
+80
+into the sapwood at the base of the trunk, some 
+physiologists (see Bosshard 1974; Harris 1989 on this 
+subject) found that the upward flow of raw sap does 
+not occur in a straight line, but in a manner which is 
+generally helical, in a progression around the axis of 
+the tree. According to the species, but also according 
+to their growth conditions, five ways of transporting 
+water up to the branches were described, of which 
+four were clearly not straight, in the form of upward 
+spirals turning towards the right, or towards the left, 
+or even swinging from one direction to the other 
+(Fig. 5). These flows are linked to the anatomical 
+structure of the wood, presenting a 'spiral grain', 
+with conducting cells deviating from the axis to a 
+greater or lesser extent, including radical changes in 
+direction during the change from juvenile to adult 
+status in many conifers. These phenomena serve to 
+guarantee that each root can provide water to each 
+branch or nearly, with priority given to the apex, the 
+most essential part of the crown.
+ 
+An analogous experiment remains to be 
+carried out with the downward flow in the phloem: 
+will we find downward spirals in the opposite 
+direction?
+ 
+This elucidation of the upward flow of raw 
+sap using dye solutions injected at the base of the 
+stem showed the paths to the crown were not direct 
+gravitational forces, these germs of life would thus 
+appear at the points where terrestrial and cosmic 
+'force lines' meet and cross-fertilise (Fig. 4).
+Viktor Schauberger (1885 – 1958)
+ 
+Austrian forester remaining voluntarily 
+outside university circles, Viktor Schauberger 
+was a hydrologist and inventor who stupefied the 
+technical and academic circles of his time. His first 
+achievement was making channels for floating wood 
+of a revolutionary type, seeming to defy the laws 
+of physics of the time. A great observer of natural 
+phenomena, he explored the diverse properties of 
+water and drew from them technical applications 
+including regeneration systems. He saw water as 
+the basis not only of all life, but also of the whole 
+of the 'terrestrial consciousness'. His thoughts and 
+discoveries led him to direct applications in forestry, 
+agriculture and hydrology (waterways, dams, 
+vitalising water, organisation of forest areas). He 
+designed an ecology in symbiosis with nature well 
+before the contemporary approach (Alexandersson 
+2002; Bartholomew 2014).
+ 
+This concept of special places for life to surge 
+up where two flows meet can also be applied to the 
+first cambial cells sharing the conducting bundles of 
+young stems, and to the widened 'secondary' cambium 
+forming a closed cylindrical generating layer, in 
+charge of the growth in thickness of the trunk: both 
+are placed exactly between the upward xylem flow (in 
+the wood) of raw sap and the downward phloem flow 
+of phloem sap.
+Vortex flows revealed
+ 
+By means of injections of liquid colourings 
+Figure 4. Left: diagrammatic representation of two “energy flows 
+(male downwards / female upwards)” intersecting in a helical 
+fashion (in Coats 1996). Right: Spatial arrangement of the seed 
+location at the intersections of the spiral patterns characteristic 
+of the species; the seed represent dormant meristematic points, 
+destined to develop as new specimen. Drawing D. Rambert.
+Figure 5. Ascent of dye solutions in stems of standing trees, after 
+injections radially at the base of the stem. A: sectorial straight;  B: 
+sectorial winding;  C: interlocked;  D: spiral turning left;  E: spiral 
+turning right (In Harris 1989, after Vité 1967).
+E. Zürcher
+
+81
+generally ignored or underestimated. Indeed, we 
+should think of this material as a dense tissue of 
+organic matter saturated with water by forces and 
+to an extent which fluctuate in a cyclic manner. The 
+behaviour when drying (loss of water, shrinkage) 
+and the resulting final density, as well as mechanical 
+resistance (to compression for example) and even 
+resistance to decomposing agents such as fungi or 
+insects, will all be influenced one way or the other by 
+the date of harvesting.
+Traditional practices which are still very much alive
+ 
+Still today, maxims about felling linked to 
+the moon are applied by certain workers of wood. 
+An interesting fact: these rules come from traditions 
+which persist in many regions of the world where 
+links remain with ancestral culture. Here we will 
+not deal with the multiple “lunar calendars”, very 
+trendy nowadays, covering numerous areas fairly 
+comprehensively, without any experimental basis. 
+The examples which follow concern cases known 
+directly to the author, or taken from scientifically 
+documented sources; their aim is to illustrate the 
+great variety of uses of wood for which the moon 
+factor is considered important for obtaining certain 
+exceptional properties. It should be pointed out that 
+in most cases this factor comes only in second or 
+third position, the most important being in general 
+the time of year, with a high value placed on “winter 
+wood”, and the situation in terms of the growing 
+conditions, mountain wood from slow-growing 
+natural forest stands being particularly appreciated. 
+Sometimes winds are mentioned, such as the Foehn 
+in the Alps, which could negatively impact certain 
+properties of the wood.
+Large-scale research
+ 
+In order to tackle the question more 
+fundamentally and with a large data base, a new 
+trial was carried out simultaneously on 4 sites in 
+Switzerland, with 48 successive fellings (each Monday 
+and each Thursday) – not linked to any experimental 
+hypothesis – of 3 trees per site over 5 ½ months, 
+representing a total of more than 600 trees felled over 
+the winter of 2003-2004 (Zürcher et al. 2010). The 
+species were Spruce (Picea abies) and Sweet Chestnut 
+(Castanea sativa). Before the beginning of the 
+experiment, a reference sample was taken the same 
+day from each of the trees which were later felled (a 
+Figure 6. The clematis (Clematis vitalba) is a woody plant which 
+is not self-supporting, belonging to the group of lianas, which 
+have the highest-known speeds of transport of the raw sap. A 
+maximum of 222 metres per hour was measured by Kucera and 
+Bossard (1981). The strongly helical structure of the vessel walls 
+probably plays here an essential role (Photo T. Volkmer).
+but helical (in a vortex) compared to the axis of 
+the trunk. An interesting similarity underlining 
+the coherence of biological systems: the flow of 
+blood in the large vessels and in the human heart, 
+studied using Doppler echocardiography and 
+cardiac magnetic resonance, also form vortexes 
+(Day 1998; Sengupta et al. 2012; Caro et al. 2013). In 
+the more recent development of research on water, 
+based on the discovery of a “fourth phase of water', 
+particularly in contact with organic hydrophilic 
+membranes, the part played by vortex flows appears 
+in a new light. One of the particularities is that the 
+vortexes increase the oxygenation of the water and its 
+amount of energy-rich hydrogen bonds (Ignatov et 
+al. 2015). Simultaneously, the emission of energy by 
+radiation is reduced, while significantly decreasing 
+the temperature when before and after vortexing is 
+compared (Pollack 2013). This last feature had been 
+discovered by Viktor Schauberger mentioned above, 
+who considered it very important for the health of 
+'biological systems' such as trees or even waterways. 
+Figure 6 may illustrate the phenomenon at the 
+anatomical level.
+PERIODICITIES  
+Chronobiological studies on Felling dates of trees and 
+properties of wood related to water
+ 
+The exact moment when a tree is felled 
+to harvest the wood, or simply the moment when 
+samples are taken, has an importance which is 
+Water in Trees - An essay on astonishing processes, structures and periodicities
+
+82
+Drying wood felled around the Full Moon
+ 
+In the Spruce samples (Picea abies; sapwood 
+and perfect wood together), a systematic and 
+statistically significant variation of water loss is 
+detectable. This fluctuation occurs according to the 
+synodic lunar cycle on felling, subdivided into 8 
+periods of 3.7 days, beginning with the moment of 
+the New Moon. The most marked variations occur 
+during the passage from the period preceding the 
+Full moon (high water loss) to the one beginning 
+with the Full moon (minimal water loss) then the 
+one preceding the Last quarter (high water loss). [ 
+Zürcher et al. 2010 ]
+ 
+The statistical analysis indicates unexpectedly 
+not only rhythms of a synodic type, but also a marked 
+sidereal rhythmicity. Scientific research is thus able 
+to affirm that behind the 'lunar' phytopractices of 
+foresters resides a kernel of objective observations. 
+This the case both for synodic lunar phases (the cycle 
+New Moon – Full Moon linked to the position of 
+our satellite relative to the Sun) and for the sidereal 
+cycle (position of the Moon compared to fixed 
+constellations), also mentioned in a roundabout and 
+somewhat curious way in certain felling rules. Note 
+that these results, while confirming the existence 
+of the 'Moon' factor as mentioned in country lore, 
+appear in a much more complex form than imagined 
+at the start of this research, Theophrastus's rule 
+seeming to be very close to the synodic phenomena 
+observed in Spruce.
+Focus on a representative site
+ 
+The systematic variations over the course of 
+the synodic lunar month can be illustrated in another 
+fashion with the graph of variation around the 
+general mean of this same criterion 'water loss' for 
+the 48 successive felling dates, using a representative 
+series: the sapwood samples of the site of Château-
+d'Oex (Zürcher et al. 2012). This material is relatively 
+homogeneous because all the trees are of the same 
+age, belonging to an even-age-managed mountain 
+forest deriving from a plantation. Figure 8 A shows 
+the abrupt change which occurred around the Full 
+Moons of November, December and January. Even if 
+the February Full Moon is included, where there was 
+almost no difference between the values before and 
+after the Full Moon, the respective variations around 
+the Full Moon for this winter period of four months 
+are not insignificant, the general mean indicating a 
+reduction in water loss of 4.5%.
+prismatic sample at chest level). Each tree provided 
+at different points of the trunk a series of samples of 
+sapwood and a series of samples of heartwood. The 
+drying behaviour of this material was followed under 
+standardised laboratory conditions.
+ 
+Among the different rhythmicities first 
+observed and then confirmed statistically for three 
+principal criteria, let us mention here the water loss, 
+which varied systematically in Spruce, particularly 
+between the fellings immediately preceding the full 
+Moon and those following it. The type of variation 
+is probably due not to differences in initial water 
+content, but to the fact that the forces binding the 
+water to the cell wall of the ligneous tissues could be 
+subject to fluctuations. The ratio between the water 
+easily extractable from the wood, designated 'free', 
+and the water extracted below the saturation point 
+of the fibres, or 'bound' water, fluctuates according 
+to lunar cycles, and probably also according to the 
+seasons, the 'lunar' variations being more marked 
+during the period from October to February 
+(Zürcher et al. 2012). Moreover, the rhythmicities 
+are manifested differently according to the species: 
+the Chestnut also shows statistically significant lunar 
+variations, but distinct from those of the Spruce.
+ 
+These systematic variations in water loss 
+cause a variation in the density of the wood after 
+drying: - For the case of Spruce, it confirms what the 
+previous studies mentioned had already observed 
+(Fig. 7 – lower).
+ 
+Figure 7. Variation of dry (andhydrous) densities of wood 
+(sapwood) of Spruce (Picea abies) with felling period and moon 
+phases, according to research done in different places and years. 
+Upper: Tharandt 1996-97 (Triebel 1998); Freiburg i.Br., 1997-98 
+(Seeling and Herz 1998, 2000); Zürich, 1998-99 (Bariska and 
+Rösch 2000) / lower: Château-d’Oex 2003-04 (Zürcher et al. 
+2012)  Means waxing Moon – waning, resp. Château-d'Oex 2003-
+04 around the Full Moon – before / after). Waxing Moon dates 
+1, 3, 5, 7; waning Moon dates 2, 4, 6, 8. Similar variations can be 
+observed especially in the second half of the trial period, from 
+December onwards (4). Reminder: most of the technological 
+properties of wood are closely linked to its density.
+E. Zürcher
+
+83
+Tests of water absorption (after drying)
+ 
+One of wood's most important physical 
+properties, decisive for its bad-weather behaviour 
+and its resistance to rot, is its hygroscopic nature – a 
+very hygroscopic wood is more prone to rot than one 
+which is less hygroscopic. This property is generally 
+expressed by the equilibrium state in a given 
+atmosphere, with a given temperature and relative 
+humidity. When they are completely waterlogged, 
+the cell walls are in a state designated 'fibre saturation 
+point', below which the loss of bound water 
+following the drying process causes deformations 
+(shrinkage). The test method chosen for estimating 
+the hygroscopic variations due to felling date was 
+to expose the samples to a direct contact with water 
+(Zürcher et al. 2012). A series of measurements was 
+made using small rods from felled trees, previously 
+air-dried under controlled conditions. They were all 
+fixed (12 x 48 = 576 samples per site) by one end to a 
+slab, the other end being immerged over a length of 
+5mm for 9 minutes in a bowl of water with ink as a 
+dye. Figure 8 B shows the variations in absorption of 
+water by capillarity in the samples taken during this 
+experimental period. Both the limitation of the lunar 
+effect to the 4 winter months and the systematic and 
+marked decrease in water absorption directly after 
+the Full Moon are very similar to what was observed 
+concerning initial water loss described above at 
+Figure 8 A. It is noteworthy that for the reabsorption 
+of water by capillarity, the mean amplitude of the 
+decrease (25.9%) for the samples taken just after the 
+Full Moon is comparatively much more pronounced 
+than for water loss and is evident even for February.
+ 
+The second test method for quantifying the 
+degree of hygroscopicity was applied by immersion 
+of samples previously used for the determination 
+of the density. In the same way, 576 cubic samples 
+for each site (4 per tree, 12 for the felling date) were 
+immersed in water at 20°C for 7 days. The absorption 
+is expressed in this case as the percentage increase 
+in mass. There too, systematic lunar variations in 
+hygroscopicity occur, in obvious coherence with the 
+loss of water. For the four months from November 
+to February, the mean reduction between the days 
+before the Full Moon and the days immediately after 
+is 12.6%, half the value obtained for absorption of 
+water by capillarity.
+ 
+These results show us that the reversible 
+variations linked to the Moon are not limited to 
+the loss of water and the relative density (and 
+shrinkage) in the course of drying: the phenomenon 
+is even more marked for the absorption of water (by 
+Figure 8 A. Variation of water loss during drying of Spruce (Picea 
+abies) samples, comparing the felling dates occurring in the 3.5 
+days running up to the Full Moon (vVM), with those of felling 
+occurring during the 3.5 days after the Full Moon (nVM), for 
+the months of November 2003 (1), December (2), January 2004 
+(3) and February (4). The samples from before the Full Moon 
+of November, December and January lost slightly more water 
+than those from fellings performed after the Full Moon. Values 
+calculated from the general mean.
+Figure 8 B. Variation of capillary water absorption by the 
+dried Spruce (Picea abies) samples, comparing the felling dates 
+occurring in the 3.5 days running up to the Full Moon (vVM), 
+with those of felling occurring during the 3.5 days after the Full 
+Moon (nVM), for the months of November 2003 (1), December 
+(2), January 2004 (3) and February (4). The samples from before 
+the Full Moon of November, December, January and February 
+absorbed considerably more water than those coming from 
+fellings performed after the Full Moon. Values calculated from 
+the general mean.
+capillarity and by immersion) of previously dried 
+wood samples. It should however be pointed out that 
+these hygroscopic variations linked to the lunar cycles 
+are much weaker than the differences due to the site 
+and the type of forestry, since Spruce samples from 
+a naturally-regenerating mountain forest show much 
+lower water absorption than those from a plantation.
+ 
+These encouraging results have to be 
+confirmed by tests of durability before definitive 
+conclusions can be made about Spruce wood for 
+outdoor use. It could nevertheless be expected that 
+differences in the resistance to decay of Spruce wood 
+might follow the following rule: “low durability of 
+wood cut not long before the full moon, because very 
+hygroscopic; higher durability of less hygroscopic 
+wood cut immediately after the full moon between 
+November and February” - which would correspond 
+Water in Trees - An essay on astonishing processes, structures and periodicities
+
+84
+ 
+It seems to us more and more obvious, as 
+has been mentioned several times, that this basis 
+is none other than the essential element for every 
+organic process: water. This was the direction of the 
+conclusions of researchers working on the cyclic 
+variations of certain chemical reactions in aqueous 
+medium in controlled laboratory conditions, such as 
+Giorgio, Piccardi, Joseph Eichmeier or Soco Tromp. 
+We should mention also the work of Vladimir Voeikov 
+and Emilio Del Giudice (2009) on the fluctuations of 
+water in its electronic charge and its capacity to react 
+with oxygen, bringing them to the concept of “ water 
+respiration”.
+ 
+Already in the 1920s, experiments had been 
+performed on the variations in surface tension of 
+water using extremely fine glass capillary tubes, 
+where the frequency of drop formation was observed 
+(Maag 1928). They demonstrated lunar rhythmicities 
+(monthly, but also daily) appearing as soon as the 
+capillaries became fine enough, showing then the 
+effect of certain planetary conjunctions. Meanwhile, 
+it was observed that when it is in capillary systems, 
+either of glass or organic like plant cells (with their 
+vacuole and their partially porous membrane), water 
+undergoes an important change in its properties, 
+like for example the ability to remain liquid at 
+temperatures as low as – 15°C. It would be interesting 
+to analyse again the effect of the 'time' factor on 
+these essential properties of water using modern 
+technologies.
+ 
+A relatively recent double publication in 
+theoretical physics by Gerhard Dorda (2004), co-
+author with von Klitzing of the discovery of the 
+“Hall Quantum Effect”, winner of the Nobel Prize for 
+Physics 1985, puts forward a new astro-geophysical 
+model of the role of gravitation in living processes. 
+This model integrates static and dynamic aspects of 
+gravitation according to the orbital movement of 
+celestial bodies, leads to a 'quantisation' of gravitation 
+and of time, and demonstrates a reversible effect 
+linked to the Sun on one hand and to the Moon on 
+the other, on the supra-molecular structure of water. 
+This model leads to the determination of reversible 
+states of aggregation or coherence ('clusters') of 
+water, in a quantitative ratio of a considerable size, 
+from 1 to 2200, according to whether the interaction 
+involved is Sun-Earth or Moon-Earth, the latter 
+being modulated by the lunar day, but also according 
+to the waxing/waning phase. Dorda considers that 
+this rhythmic fluctuation of water in a system with 
+3 celestial bodies, constitutes the biological clock 
+sought up to now in organic structures. This model 
+was validated independently thanks to experimental 
+to the oldest documented rule, written by the Greek 
+naturalist Theophrastus (371 – 287 b.C), stipulating 
+that the best construction timber is obtained when 
+trees are felled in winter, in the first days after full 
+moon. Indeed, it is well known that woods whose 
+fibres can be highly saturated by water are more 
+easily attacked by fungi and xylophagous insects than 
+woods with a comparatively low saturation level of 
+their cell walls.
+Implications and perspectives concerning periodicities
+This insight into lunar cycles detected in the plant 
+world, and in particular in trees and their wood, 
+shows a real phenomenon, which is additional to 
+the exogenous rhythms of mostly solar origin whose 
+action is well known, both on a daily and a seasonal 
+level, and linked over the longer term to the cycle of 
+sunspot activity, varying over an 11 year period. The 
+Moon modulates this principal exogenous rhythm 
+on an hourly basis, through the gravimetric tides 
+occurring with two high and two low tides per day, as 
+well as over the week and the lunar month, according 
+to the synodic, tropical, sidereal or anomalistic 
+(perigee and apogee) cycle. It seems that the lunar 
+rhythms become apparent when the influence of 
+the sun is reduced, either naturally or due to an 
+experimental set-up.
+ 
+What kind of forces are involved here? Where 
+the synodic and anomalistic rhythms are concerned, 
+the gravitational force causing tides is too weak to 
+explain even a tiny part of the lunar phenomena 
+observed in plants: it is not more than 0.08 millionths 
+of the force exerted by gravity on a mass situated at 
+the surface of the Earth.
+ 
+For the largest tree measured in Europe, 
+described by Klein in 1908, a Silver Fir Abies alba in 
+the Black Forest (height 68m, diameter 380cm, bole 
+volume 140 m3, weight estimated at 100 t), the tidal 
+(gravitational) lunar force represents a light daily pull 
+then relaxation of 8 grammes only – the weight of 
+two sugar lumps!
+ 
+The variations of the geomagnetic field, 
+weak but distinct, with a period of half a lunar day 
+(12 hours 25 minutes), due to the gravimetric tides, 
+present a similar situation.
+ 
+The French chronobiologist Lucien Baillaud 
+(2004) points out quite rightly: “Where the moon is 
+concerned, the supporter […] wants to be shown the 
+basis of the link between the Moon and the living 
+being, with a breakdown of how the phenomena fit 
+together – or at least wishes us to suggest a hypothesis.
+E. Zürcher
+
+85
+their own rain. Be it above the Amazonian tropical 
+forest or boreal coniferous forests, the formation 
+of clouds and the rainfall that follows happen 
+thanks to a form of 'seeding' by micro-particles of 
+organic origin. The gaseous substances given off by 
+the trees, volatile organic compounds, undergo a 
+photochemical condensation caused by light and 
+behave as 'cloud condensation nuclei'. Mushroom 
+spores, pollen grains and microscopic vegetable 
+debris which are also given off into the atmosphere 
+have the same effect (Pöschl et al. 2010;  Ehn et al. 
+2014). It is then easy to imagine that the rain regime 
+could dramatically change if the forest cover should 
+be reduced, not only because of then lacking “cloud 
+producers”, but also because of the absence of “rain 
+provokers”.
+ 
+In his description of the geoclimatic role 
+of the Amazonian forest, Peter Bunyard (editor 
+of the British journal The Ecologist, 2015) draws 
+attention to the new geoclimatic model developed by 
+Victor Gorshkov and Anastassia Makarieva, of the 
+Department of Theoretical Physics of the Institute 
+of Unclear Physics of Saint-Petersburg (2007, 2014). 
+The analysis of the climatological and hydrological 
+data leads them to the conclusion that it is not the 
+movement of air masses which set off the hydrological 
+cycle (the generally accepted model up to now), but 
+on the contrary the changes in phase of the water 
+in the atmosphere above forests which bring about 
+the movement of air masses. Indeed, water needs 
+considerable energy to evaporate from forests (around 
+600 calories per gramme, depending on temperature 
+and atmospheric pressure), and it returns this energy 
+as heat in the high atmosphere when it condenses 
+to form rain. Thus, the extreme impact of solar 
+radiation around the equator is absorbed, thanks to 
+the ecosystems rich in water and biomass found in 
+the zones of the globe. In parallel, the rapidity of the 
+condensation process compared to the slowness of 
+the evapo-transpiration creates a pressure difference 
+with a suction effect. The Amazonian forest thus 
+acts like a gigantic hydrological heart ('biotic 
+pump'), attracting air masses from the Atlantic and 
+enriching them in water, performing half a dozen 
+cycles of evapo-transpiration – precipitation, moving 
+from East to West, and finally rising in the Andes 
+and moving north (Central and North America) 
+and south (Argentina) giving rise to warm rains in 
+latitudes far from the equator. The tropical forests 
+can therefore be seen as components of the biosphere 
+ensuring both the functioning and the stability of 
+the great geoclimatic water cycle. In this context, 
+the researchers bring to light another essential 
+measurements already published by Mario Cantiani 
+et al. (1994) and interpreted in keeping with lunar 
+chronobiology by E. Zürcher, M.-G. Cantiani, F. 
+Sorbetti-Guerri and D. Michel in 1998.
+ 
+Martial Rossignol and his colleagues, 
+some years before (1990), highlighted the role of 
+electromagnetic phenomena linked to lunar cycles 
+(polarisation of light, modulation of wavelength, 
+ionisation of the atmosphere, atmospheric pressure) 
+and considered a possible link with the induction of 
+bio-electric potentials at the cell level.
+ 
+Not long after, in 2004, Philippe Vallée 
+devised a new experimental method for proving in 
+a reproducible manner that weak, low-frequency 
+electromagnetic fields have a durable effect on water. 
+This researcher stresses the importance of interfaces 
+between water and its solid or gaseous inclusions: 
+an essential aspect, since interfacial water plays a 
+fundamental role in the organic world.
+ 
+And now, a new scientific sensation has just 
+come out, and brings an essential component to 
+reinforce the hypotheses formulated here: 'The Fourth 
+phase of Water' (Pollack 2013). The discovery and the 
+demonstration of a “liquid crystal” phase of water in 
+contact with hydrophilic membranes with dielectrical 
+properties (wood corresponds to these criteria) 
+allows Pollack to explain a whole series of 'anomalies' 
+of water which were until now unexplained, and to 
+open horizons beyond expectation. 
+ 
+All these discoveries and interpretations 
+on a purely physical level do not however provide a 
+reply to the question of why differences are observed 
+between certain living plant species, both annual 
+and woody, in their physiological reactions to lunar 
+cycles and the behaviour of their wood. Indeed, 
+trials on germination and initial growth have shown 
+that simultaneously growing plants of different 
+species are actually impacted by the factor “Moon”, 
+but in counterphase, some species being positively 
+stimulated of days before the New Moon, while 
+others start their growth better in days before Full 
+Moon (Zürcher 1992).
+ENDANGERED GLOBAL CONTEXT
+ 
+The described processes, structures and 
+periodicities probably play a major role in the water 
+cycles activated by forests, especially in equatorial 
+zones. The last ones are probably of much higher 
+existential importance for the life on earth than 
+commonly admitted.
+ 
+Trees produce clouds, but forests make also 
+Water in Trees - An essay on astonishing processes, structures and periodicities
+
+86
+Pullinen I, Springer M, Rubach F, Tillmann R, Lee 
+B, Lopez-Hilfiker F, Andres S, Acir IH, Rissanen 
+M, Jokinen T, Schobesberger S, Kangasluoma 
+J, Kontkanen J, Nieminen T, Kurtén T, Nielsen 
+LB, Jørgensen S, Kjaergaard HG, Canagaratna 
+M, Maso MD, Berndt T, Petäjä T, Wahner A, 
+Kerminen VM, Kulmala M, Worsnop DR, Wildt 
+J, Mentel TF. (2014): A large source of low-
+volatility secondary organic aerosol. Nature, 
+2014 Feb 27; 506 (7489): 476-9.
+Harris, J.M. (1989): Spiral Grain and Wave Phenomena 
+in Wood Formation. Springer, New York   
+Ignatov, I., Mosin, O. and Bauer, E. (2015): Vortex 
+Power 
+Spring 
+Water: 
+Physical-Chemical 
+Qualities of this Water compared to Mountain 
+and Melt Water from Bulgaria, Russia and 
+Glacier Rosenlaui from Swiss Alps. Advances in 
+Physics Theories and Applications, Vol.45, 2015  
+Johnson, B. (2013): The Ascent of Sap in Tall Trees: a 
+Possible Role for Electrical Forces. Water 5, 86 – 
+104, Nov. 2013.
+Koch, G.W., Sillett, S.C., Jennings, G.M., Davis, S.D. 
+(2004): "The limits to tree height", Nature 428, 22 
+April 2004, pp. 851 - 854
+Kucera, L.J., Bosshard, H.H. (1981) : Die Waldrebe 
+- Clematis vitalba L.  VieIteljahrsschrift der 
+Naturforschenden Gesellschaft in Zürich (1981) 
+126/l: 51-71 
+Lance, C. (2013) : Respiration et photosynthèse - 
+Histoire et secrets d'une équation. Edp sciences, 
+Grenoble
+Maag, G. (1928): Planeteneinflüsse, West-Ost-Verlag, 
+Konstanz
+Makarieva A.M., Gorshkov V.G., Sheil D., Nobre 
+A.D., Bunyard P., Li B.-L. (2014) Why does air 
+passage over forest yield more rain? Examining 
+the coupling between rainfall, pressure, and 
+atmospheric moisture content. Journal of 
+Hydrometeorology, 15, 411-426.
+Makarieva, A.M.,  Gorshkov, V.G. (2007): Biotic 
+pump of atmospheric moisture as driver of the 
+hydrological cycle on land. Hydrol. Earth Syst. 
+Sci., 11, 1013 – 1033, 2007. 
+Morton, A.A. (1977): The Fibonacci Series and 
+the Periodic Table of Elements. The Fibonacci 
+Quarterly Vol.15, Number 2, April 1977
+Pollack, G. H.  (2013) : The Fourth Phase of Water 
+-  Beyond  solid, liquid and vapor.  Ebner and 
+Sons, Seattle, USA
+Pollack, G. H. (2001) : Cells, Gels and the Engines of 
+Life.  Ebner and Sons, Seattle, USA.
+Pöschl U, Martin ST, Sinha B, Chen Q, Gunthe SS, 
+Huffman JA, Borrmann S, Farmer DK, Garland 
+phenomenon: if a coastal zone is deforested over a 
+width of 600 km or more, the masses of humid ocean 
+air can no longer move inland, thus condemning 
+their forests to perish.
+REFERENCES
+Alexandersson, O. (2002). Living Water: Viktor 
+Schauberger and the Secrets of Natural Energy. 
+Gill Books, Dublin, Ireland.
+Baillaud, 
+L. 
+(2004): 
+Chronobiologie 
+lunaire 
+controversée: 
+de 
+la 
+nécessité 
+de 
+bonnes 
+méthodologies. Bulletin du Groupe d’Etude des 
+Rythmes Biologiques (35) 3 : 3-16.
+Bariska, M., Rösch, P. (2000): Fällzeit und 
+Schwindverhalten 
+von 
+Fichtenholz. 
+Schweizerische Zeitschrift für Forstwesen 151 
+(2000) 11: 439-443.
+Bartholomew, A. (2014) : Le génie de Viktor 
+Schauberger. Le Courrier du Livre, Paris
+Bosshard, H. H. (1974): Holzkunde, Band 2,  Zur 
+Biologie, Physik und Chemie des Holzes. 
+Birkhäuser Verlag, Basel und Stuttgart
+Bosshard, H.H. (1974): Holzkunde Bd. 2 - Zur 
+Biologie, Physik und Chemie des Holzes. 
+Birkhäuser-Verlag, Basel  
+Bunyard, P. (2015): Without its rainforest, the Amazon 
+will turn to desert. The Ecologist, 2nd March 
+2015.
+Cantiani, M. (†), Cantiani, M.-G., Sorbetti Guerri, F. 
+1994: Rythmes d'accroissement en diamètre des 
+arbres forestiers. Revue Forestière Française 46: 
+349-358.
+Caro, C.G., A.Seneviratne, K.B.Heraty, C.Monaco, 
+M.G.Burke, R.Krams, C.C.Chang, G.Coppola, 
+and P.Gilson (2013). Intimal hyperplasia 
+following implantation of helical-centreline 
+and straight-centreline stents in common 
+carotid arteries in healthy pigs: influence of 
+intraluminal flow. J R Soc Interface. 2013 Oct 16; 
+10 (89):20130578.
+Coats, C. (1996): Living Energies. An Exposition 
+of Concepts Related to the Theories of Viktor 
+Schauberger. Gateway Books, Bath, U.K.
+Day, M. Let the blood run free. New Scientist 158 
+(2134):19, May 16, 1998
+Dorda, G. (2004): Sun, Earth, Moon  -  the Influence 
+of Gravity on the Development of Organic 
+Structures. Part II: The Influence of the Moon. 
+Sudetendeutsche Akademie der Wissenschaften 
+und Künste, München. Bd 25: 29-44.
+Ehn M, Thornton JA, Kleist E, Sipilä M, Junninen H, 
+E. Zürcher
+
+87
+Zürcher, E. (1992): Rythmicites dans la germination 
+et la croissance initiale d'une essence forestiere 
+tropicale. (Rhythmizitäten in der Keimung und 
+im Initialwachstum einer tropischen Baumart)  
+Schweizerische Zeitschrift fuer Forstwesen 
+(Switzerland) v. 143(12) p. 951-966
+Zürcher, E. (2016) : Die Bäume und das Unsichtbare. 
+AT-Verlag, Aarau (CH) und München (D)
+Zürcher, E. (2016): Les Arbres, emtre Visible et 
+Invisible. Actes Sud, Arles (F)
+Zürcher, E., Cantiani, M.-G., Sorbetti-Guerri, F., 
+Michel, D.  (1998):  Tree stem diameters fluctuate 
+with tide. Nature 392: 665-666.
+Zürcher, E., Rogenmoser C, Soleimany Kartalaei 
+A, Rambert D. (2012): Reversible Variations in 
+Some Wood Properties of Norway Spruce (Picea 
+abies Karst.), Depending on the Tree Felling 
+Date. In: Spruce: Ecology, Management and 
+Conservation. Eds. Nowak KI and Strybel HF. 
+Nova Science Publishers, Hauppauge, New York 
+2012; 75-94.
+Zürcher, E., Schlaepfer, R., Conedera, M., Giudici, 
+F. (2010): Looking for differences in wood 
+properties as a function of the felling date: 
+lunar phase-correlated variations in the drying 
+behavior of Norway Spruce (Picea abies Karst.) 
+and Sweet Chestnut (Castanea sativa Mill.). 
+TREES (2010) 24: 31-41.
+RM, Helas G, Jimenez JL, King SM, Manzi A, 
+Mikhailov E, Pauliquevis T, Petters MD, Prenni 
+AJ, Roldin P, Rose D, Schneider J, Su H, Zorn 
+SR, Artaxo P, Andreae MO. (2010): Rainforest 
+aerosols as biogenic nuclei of clouds and 
+precipitation in the Amazon. Science 2010, Sep 
+17; 329 (5998):1513-6. 
+Ray, P. M. (1972): The Living Plant. (2nd Ed.) Holt, 
+Rinehart, and Winston, New York
+Rossignol, M., S. Benzine-Tizroutine and L. 
+Rossignol.  (1990).  Lunar cycle and nuclear DNA 
+variations in potato callus or root meristem. In 
+Tomassen, G.J.M., de Graaff, W., Knoop, A. A. 
+and Hengeveld, R. (eds), Geo-cosmic relations; 
+the earth and its macro-environment. Proceedings 
+of the First International Congress on Geo-cosmic 
+Relations, April 19-22, 1989, Amsterdam. Pudoc, 
+Wageningen, The Netherlands.
+Seeling, U. (2000): Ausgewählte Eigenschaften 
+des Holzes der Fichte (Picea abies (L.) Karst.) 
+in Abhängigkeit vom Zeitpunkt der Fällung. 
+Schweizerische Zeitschrift für Forstwesen / 
+Journal Forestier Suisse 151 (2000) 11: 451-458.
+Seeling, 
+U., 
+Herz, 
+A. 
+(1998): 
+Einfluss 
+des 
+Fällzeitpunktes auf das Schwindungsverhalten 
+und die Feuchte des Holzes von Fichte (Picea 
+abies) - Literaturübersicht und Pilotstudie. 
+Albert-Ludwigs-Universität 
+Freiburg 
+i.Br., 
+Institut 
+Forstbenutzung 
+und 
+Forstliche 
+Arbeitswissenschaft. Arbeitspapier 2-98 (66p).
+Sengupta, P. et al. (2012) : Emerging Trends in CV 
+Flow Visualization. JACC - Cardiovascular 
+Imaging, Vol.5, No.3 : 305 – 16
+Triebel, 
+J. 
+(1998): 
+Mondphasenabhängiger 
+Holzeinschlag 
+- 
+Literaturbetrachtung 
+und 
+Untersuchung 
+ausgewählter 
+Eigenschaften 
+des Holzes von Fichten (Picea abies Karst.). 
+Diplomarbeit, Institut für Forstbenutzung und 
+Forsttechnik, TU Dresden (108 p).
+Vallée, Ph. (2004): Etude de l’effet de champs 
+électromagnétiques basse fréquence sur les 
+propriétés physico-chimiques de l’eau. Thèse de 
+Doctorat, Université Pierre et Marie Curie (Paris 
+VI).
+Voeikov, V. L., Del Giudice, E. (2009): Water 
+Respiration - The Basis of the Living State. 
+WATER 1, 52 - 75, 1 July 2009
+Zimmer, B. & Wegener (1996):  Stoff- und 
+Energieflüsse vom Forst zum Sägewerk. Holz als 
+Roh-und Werkstoff 54 (1996): 217-223.
+Zimmermann, M. H. (1983): Xylem Structure and 
+the Ascent of Sap. Springer-Verlag, Berlin – 
+Heidelberg - New York – Tokyo
+Water in Trees - An essay on astonishing processes, structures and periodicities
+View publication stats
+

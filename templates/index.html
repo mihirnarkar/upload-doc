@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document to Text Converter</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Custom JavaScript for auto-dismissing alert -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                var alertElement = document.querySelector('.alert');
+                if (alertElement) {
+                    alertElement.remove();
+                }
+            }, 1000); // Set the time to wait before dismissing in milliseconds (1 second in this case)
+        });
+    </script>
+
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="mb-0">Document to Text Converter</h2>
+                    </div>
+                    <div class="card-body">
+
+                        {% if message %}
+                            <div class="alert alert-success" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endif %}
+
+                        <form action="/" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="file">Choose Document (PDF/Word):</label>
+                                <input type="file" name="file" id="file" class="form-control-file" multiple accept=".doc, .docx, .pdf">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+
+                        <form action="/submit" method="post">
+                            <button type="submit" class="btn btn-success mt-3">Submit and Convert</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
